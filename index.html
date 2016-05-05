@@ -1,195 +1,59 @@
 <!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
 
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <link href="assets/css" rel="stylesheet" type="text/css">
-    <title>GitHub Repository HTML Preview</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        html {
-            height: 100%;
-            background-color:#f4f6f8;
-            background-image: linear-gradient(-180deg, #fcfcfd 50%, #f4f6f8 100%);
-            background-repeat: no-repeat;
-        }
-        body {
-            font-family: "Source Sans Pro", HelveticaNeue, SegoeUI, Helvetica, Arial, sans-serif;
-            text-align: center;
-            padding: 2em 3em 1em 3em;
-            font-size: 12px;
-            margin: 0 auto;
-            color: #333;
-        }
-        a {
-            color: #4584EE;
-        }
-        h1 {
-            font-weight: 200;
-            font-size: 3em;
-            color: #4D4D4D;
-            line-height: 1;
-            margin: 0.2em 0;
-            padding: 1.4em 0 0 0;
-            background: url("/extension/opera/design/opera/static/o/welcome-upgrade/heart_logo.svg") no-repeat center top;
-            background-size: 1.4em;
-        }
-        h1 em {
-            color: #C50F25;
-            font-weight: 400;
-            font-style: normal;
-        }
-        h2 {
-            font-weight: 700;
-            font-size: 1.3em;
-            color: #000000;
-        }
-        h3 {
-            font-size: 11px;
-            line-height: 1.5;
-            padding: 3px 6px;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-            overflow : hidden;
-            text-overflow: ellipsis;
-        }
-        p {
-            font-weight: 400;
-            color: #000000;
-            font-size: 1em;
-            line-height: 1.4;
-            clear: both;
-            margin: 0.5em 0;
-            width: 600px;
-            text-align: center
-        }
-        u {
-            color: #4584EE;
-        }
-        .illustration {
-            height: 340px;
-            position: relative;
-            max-width: 960px;
-            margin: 0 auto;
-        }
-        .laptop {
-            position: absolute;
-            width: 480px;
-            height: 282px;
-            top: 0px;
-            left: 50%;
-            margin: 0 0 0 -240px;
-        }
-        .laptop img:first-child {
-            position: absolute;
-            width: 390px;
-            height: auto;
-            top: -10px;
-            left: 46px;
-            z-index: 101;
-        }
-        .blob {
-            position: absolute;
-            box-sizing: border-box;
-            text-align: right;
-            width: 175px;
-            height: 240px;
-            top: 30px;
-            z-index: 2;
-        }
-        .panel {
-            background: #fff;
-            box-shadow: 0 0 1px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.1);
-            border-radius: 4px;
-            padding: 3px;
-            text-align: left;
-        }
-        .panel img {
-            max-width: 100%;
-            height: auto;
-        }
-        .bookmark1 {
-            left: 30px;
-            top: 30px;
-            background: url("/extension/opera/design/opera/static/o/welcome-upgrade/arrow_left.svg") right bottom no-repeat;
-        }
-        .bookmark2 {
-            right: 30px;
-            background: url("/extension/opera/design/opera/static/o/welcome-upgrade/arrow_right.svg") left bottom no-repeat;
-        }
-        form {
-            margin: 2em auto;
-            max-width: 700px;
-            height: 32px;
-            z-index: 5;
-        }
-        form img.google {
-            float: left;
-        }
-        form input[type=text] {
-            font-size: 14px;
-            border: 1px solid #b3b3b3;
-            border-radius: 2px 0 0 2px;
-            padding: 0 10px;
-            margin: 0 0 0 10px;
-            height: 30px;
-            width: calc(100% - 190px);
-            -webkit-appearance: none;
-            float: left;
-        }
-        form button {
-            height: 32px;
-            color: #fff;
-            font-size: 1em;
-            line-height: 30px;
-            padding: 3px 17px 0 17px;
-            margin: 0;
-            border: none;
-            border-radius: 0 2px 2px 0;
-            background-color: #498bf4;
-            float: left;
-        }
-        footer {
-            height: 90px;
-        }
-    </style>
-  </head>
-  <body>
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
 
-    <h1><em>GitHub Repository</em> HTML Preview</h1>
-    <h2>"Just paste url HTML repository, and action!" &mdash; @IDWEBDesigner</h2>
-      <div align="center">
-      <p>GitHub Repository HTML Preview allows you to render those files without cloning or downloading whole repositories. It is a client-side solution and does not involve any third party hosting servers.
+    http://www.apache.org/licenses/LICENSE-2.0
 
-If you try to open raw versions of any HTML, CSS or JS files in a web browser directly from GitHub, all you will see are sources. GitHub forces them to use the "text/plain" content-type, so they cannot be interpreted. This script overrides it by using Yahoo! Query Language.</p>
-      </div>
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
 
-   <div class="illustration">
-      <div class="blob bookmark1">
-        <img src="assets/class-act.png" alt="Bookmark example" width="100%">
-      </div>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
-      <div class="blob bookmark2">
-        <img src="assets/heisencat.png" alt="Bookmark example" width="100%">
-      </div>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Hello World</title>
+</head>
 
-      <div class="laptop">
-        <img src="assets/filmtocat.png" alt="Preview of the bookmark manager">
-      </div>
+<body>
+    <div class="app">
+        <h1>PhoneGap</h1>
+        <div id="deviceready" class="blink">
+            <p class="event listening">Connecting to Device</p>
+            <p class="event received">Device is Ready</p>        </div>
     </div>
-      <br/>
-	<form id="previewform" action="">
-        <img class="google" src="assets/github_logo.png" style="padding-top:5px" alt="GitHub" width="103" height="auto">
-		<input type="text" id="file" value="" placeholder="e.g. https://github.com/user/repo/blob/master/index.html" size="70"> <button type="submit" value="&raquo;"><img src="assets/search_icon.png" alt="Search" width="15" height="15"></button>
-	</form>
-	<script src="/htmlpreview.min.js"></script>
-	<script>HTMLPreview.init();</script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
 
-    <footer>
-      <img src="assets/idwebdesigner.jpg" alt="designer.web.id" width="auto" height="35">
-    </footer>
-  
-  </body></html>
+</html>
